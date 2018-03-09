@@ -11,7 +11,7 @@ $data = json_decode(file_get_contents(__DIR__.'/tests.json'), true);
     <title>Загруженные тесты</title>
 </head>
 <body>
-<h2>Выберете тест</h2>
+<h2>Выберите тест</h2>
 <form action="test.php" method="get">
   <ol>
     <?php foreach ($data as $number => $test): ?>

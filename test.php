@@ -1,11 +1,9 @@
 <?php
 $data = json_decode(file_get_contents(__DIR__.'/tests.json'), true);
 $selectNumber = $_GET['testNumber'];
-$quest = $data[$selectNumber]['quest'];
-$answer1 = $data[$selectNumber]['answ1'];
-$answer2 = $data[$selectNumber]['answ2'];
-$answer3 = $data[$selectNumber]['answ3'];
-$correctAnswer = $data[$selectNumber]['answX'];
+$quest = $data[$selectNumber]['question'];
+$answers = $data[$selectNumber]['answers'];
+$correct_answer_num = (int)$data[$selectNumber]['correct_answer_num']
 ?>
 
 <!doctype html>
@@ -21,24 +19,20 @@ $correctAnswer = $data[$selectNumber]['answX'];
 <h3>Выберете правильный ответ</h3>
 <form method="post">
     <p><b><?php echo $quest?></b> <br>
+    <?php foreach ($answers as $answer_num => $answer) :?>
         <label>
-            <input type="radio" name="answer" value="<?php echo $answer1?>">
-        </label> <?php echo $answer1?>
-        <label>
-            <input type="radio" name="answer" value="<?php echo $answer2?>">
-        </label> <?php echo $answer2?>
-        <label>
-            <input type="radio" name="answer" value="<?php echo $answer3?>">
-        </label> <?php echo $answer3?>
+            <input type="radio" name="answer" value="<?php echo $answer_num?>">
+        </label> <?php echo $answer?>
     </p>
+    <?php endforeach;?>
     <input type="submit" value="Выбрать">
 <?php
 if (!empty($_POST)) {
-    $userAnswer = $_POST['answer'];
-    if($userAnswer !== $correctAnswer) {
-        echo '<b><p>Ответ неправильный</p></b>';
-    } else {
+    $userAnswer_num = (int)++$_POST['answer'];
+    if($correct_answer_num === $userAnswer_num) {
         echo '<b><p>Ответ правильный</p></b>';
+    } else {
+        echo '<b><p>Ответ неправильный</p></b>';
     }
 }
 ?>
