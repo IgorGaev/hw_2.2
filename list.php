@@ -1,5 +1,4 @@
 <?php
-move_uploaded_file($_FILES['testfile']['tmp_name'],'tests.json');
 $data = json_decode(file_get_contents(__DIR__.'/tests.json'), true);
 ?><!doctype html>
 <html lang="en">
