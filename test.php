@@ -16,7 +16,7 @@ $correct_answer_num = (int)$data[$selectNumber]['correct_answer_num']
     <title>Document</title>
 </head>
 <body>
-<h3>Выберете правильный ответ</h3>
+<h3>Выберите правильный ответ</h3>
 <form method="post">
     <p><b><?php echo $quest?></b> <br>
     <?php foreach ($answers as $answer_num => $answer) :?>
