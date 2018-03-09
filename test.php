@@ -4,9 +4,7 @@ $selectNumber = $_GET['testNumber'];
 $quest = $data[$selectNumber]['question'];
 $answers = $data[$selectNumber]['answers'];
 $correct_answer_num = (int)$data[$selectNumber]['correct_answer_num']
-?>
-
-<!doctype html>
+?><!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">

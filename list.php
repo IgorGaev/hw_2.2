@@ -13,7 +13,7 @@ $data = json_decode(file_get_contents(__DIR__.'/tests.json'), true);
 <h2>Выберите тест</h2>
 <form action="test.php" method="get">
   <ol>
-    <?php foreach ($data as $number => $test): ?>
+    <?php foreach ($data as $number => $test):?>
     <li>
         <input type="radio" name="testNumber" value="<?php echo $number?>">
         Тест № <?php echo $number?>
