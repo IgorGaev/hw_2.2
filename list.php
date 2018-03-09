@@ -1,7 +1,6 @@
 <?php
 move_uploaded_file($_FILES['testfile']['tmp_name'],'tests.json');
 $data = json_decode(file_get_contents(__DIR__.'/tests.json'), true);
-print_r($data)
 ?><!doctype html>
 <html lang="en">
 <head>
@@ -12,17 +11,17 @@ print_r($data)
     <title>Загруженные тесты</title>
 </head>
 <body>
-<ol>
+<h2>Выберете тест</h2>
+<form action="test.php" method="get">
+  <ol>
     <?php foreach ($data as $number => $test): ?>
     <li>
-        <p><b>Сколько будет 3 + 2?</b> <br>
-            <input type="radio" name="answer" value="a1"> Три
-            <input type="radio" name="answer" value="a2"> Четыре
-            <input type="radio" name="answer" value="a3"> Пять
-        </p>
-    </li>
-
-</ol>
-
+        <input type="radio" name="testNumber" value="<?php echo $number?>">
+        Тест № <?php echo $number?>
+     </li>
+    <?php endforeach?>
+  </ol>
+    <input type="submit" value="Выбрать">
+</form>
 </body>
 </html>
