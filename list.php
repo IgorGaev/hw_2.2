@@ -11,16 +11,18 @@ $data = json_decode(file_get_contents(__DIR__.'/tests.json'), true);
 </head>
 <body>
 <h2>Выберите тест</h2>
-<form action="test.php" method="get">
-  <ol>
+<ol>
     <?php foreach ($data as $number => $test):?>
-    <li>
-        <input type="radio" name="testNumber" value="<?php echo $number?>">
-        Тест № <?php echo $number?>
-     </li>
+        <li>
+            Тест № <?php echo $number?>
+        </li>
     <?php endforeach?>
-  </ol>
-    <input type="submit" value="Выбрать">
+</ol>
+<form action="test.php" method="get">
+    <label>
+        <input type="text" name="testNumber">
+    </label>
+    <input type="submit" value="Подтвердить">
 </form>
 </body>
 </html>

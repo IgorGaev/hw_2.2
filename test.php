@@ -1,9 +1,18 @@
 <?php
-$data = json_decode(file_get_contents(__DIR__.'/tests.json'), true);
-$selectNumber = $_GET['testNumber'];
-$quest = $data[$selectNumber]['question'];
-$answers = $data[$selectNumber]['answers'];
-$correct_answer_num = (int)$data[$selectNumber]['correct_answer_num']
+if (!empty($_GET)) {
+    if (array_key_exists('testNumber', $_GET)) {
+        $data = json_decode(file_get_contents(__DIR__ . '/tests.json'), true);
+        $filter = FILTER_VALIDATE_INT; # задаем параметры фильтра
+        $options = [
+            'options' => [
+                'min_range' => 1,
+                'max_range' => 4
+            ]
+        ];
+        $validate = filter_input(INPUT_GET, 'testNumber', $filter, $options);
+        echo $validate;
+    }
+}
 ?><!doctype html>
 <html lang="en">
 <head>
@@ -14,25 +23,24 @@ $correct_answer_num = (int)$data[$selectNumber]['correct_answer_num']
     <title>Document</title>
 </head>
 <body>
-<h3>Выберите правильный ответ</h3>
-<form method="post">
-    <p><b><?php echo $quest?></b> <br>
-    <?php foreach ($answers as $answer_num => $answer) :?>
-        <label>
-            <input type="radio" name="answer" value="<?php echo $answer_num?>">
-        </label> <?php echo $answer?>
-    </p>
-    <?php endforeach;?>
-    <input type="submit" value="Выбрать">
 <?php
-if (!empty($_POST)) {
-    $userAnswer_num = (int)++$_POST['answer'];
-    if($correct_answer_num === $userAnswer_num) {
-        echo '<b><p>Ответ правильный</p></b>';
-    } else {
-        echo '<b><p>Ответ неправильный</p></b>';
-    }
-}
-?>
+if($validate) {
+    $selectNumber = $_GET['testNumber'];
+    $quest = $data[$selectNumber]['question'];
+    $answers = $data[$selectNumber]['answers'];
+    $correct_answer_num = (int)$data[$selectNumber]['correct_answer_num'];
+    echo '<h3>Выберите правильный ответ</h3>';
+    echo '<form method="post">';
+    echo "<p><b>$quest</b></p>";
+    foreach ($answers as $answer_num => $answer) :
+    echo '<label>';
+    echo "<input type='radio' name='answer' value='".$answer_num."'>$answer";
+    echo '</label>';
+    endforeach;
+    echo '<input type="submit" value="Выбрать">';
+} else {
+    echo 'Bad';
+}?>
+
 </body>
 </html>
