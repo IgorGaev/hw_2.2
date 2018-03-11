@@ -15,10 +15,10 @@
 </head>
 <body>
 <?php if ($validate):
-    $selectNumber = $_GET['testNumber'];
+    $selectNumber = (int)$_GET['testNumber'];
     $quest = $data[$selectNumber]['question'];
     $answers = $data[$selectNumber]['answers'];
-    $correctAnswerNum = (int)$data[$selectNumber]['correct_answer_num'] ?>
+    $correctAnswerNum = $data[$selectNumber]['correct_answer_num'] ?>
     <h3>Выберите правильный ответ</h3>
     <form method="post">
         <p><b><?php echo $quest?></b> <br>
