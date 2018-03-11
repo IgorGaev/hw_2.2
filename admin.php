@@ -9,7 +9,7 @@
 </head>
 <body>
 <h1>Загрузите файл с тестом</h1>
-<form action="redirect.php" enctype="multipart/form-data" method="post">
+<form action="list.php" enctype="multipart/form-data" method="post">
     <p><input name="testfile" type="file"></p>
     <input type="submit" value="Загрузить">
 </form>
