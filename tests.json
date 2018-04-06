@@ -1,0 +1,70 @@
+[
+    {        
+        "question1": {
+            "question": "Сколько будет 2 + 1?",
+            "answers": ["Три", "Четыре", "Пять", "Шесть"],
+            "correctAnswerNum": 1 
+        },
+        "question2": {
+            "question": "Сколько будет 2 + 2?",
+            "answers": ["Три", "Четыре", "Пять", "Шесть"],
+            "correctAnswerNum": 2 
+        },
+        "question3": {
+            "question": "Сколько будет 2 + 3?",
+            "answers": ["Три", "Четыре", "Пять", "Шесть"],
+            "correctAnswerNum": 3 
+        }
+    },
+    {        
+        "question1": {
+            "question": "Сколько будет 5 - 1?",
+            "answers": ["Три", "Четыре", "Пять", "Шесть"],
+            "correctAnswerNum": 2 
+        },
+        "question2": {
+            "question": "Сколько будет 2 + 4?",
+            "answers": ["Три", "Четыре", "Пять", "Шесть"],
+            "correctAnswerNum": 4 
+        },
+        "question3": {
+            "question": "Сколько будет 2 + 3?",
+            "answers": ["Три", "Четыре", "Пять", "Шесть"],
+            "correctAnswerNum": 5 
+        }
+    },
+    {        
+        "question1": {
+            "question": "Сколько будет 5 - 1?",
+            "answers": ["Три", "Четыре", "Пять", "Шесть"],
+            "correctAnswerNum": 2 
+        },
+        "question2": {
+            "question": "Сколько будет 2 + 4?",
+            "answers": ["Три", "Четыре", "Пять", "Шесть"],
+            "correctAnswerNum": 4 
+        },
+        "question3": {
+            "question": "Сколько будет 2 + 3?",
+            "answers": ["Три", "Четыре", "Пять", "Шесть"],
+            "correctAnswerNum": 3 
+        }
+    },
+    {        
+        "question1": {
+            "question": "Сколько будет 5 - 1?",
+            "answers": ["Три", "Четыре", "Пять", "Шесть"],
+            "correctAnswerNum": 2 
+        },
+        "question2": {
+            "question": "Сколько будет 2 + 4?",
+            "answers": ["Три", "Четыре", "Пять", "Шесть"],
+            "correctAnswerNum": 4 
+        },
+        "question3": {
+            "question": "Сколько будет 2 + 3?",
+            "answers": ["Три", "Четыре", "Пять", "Шесть"],
+            "correctAnswerNum": 3
+        }
+    }
+]
